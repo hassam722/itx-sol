@@ -1,0 +1,1218 @@
+# my.kv
+
+        
+
+
+
+<user_login>:
+    MDBoxLayout:
+        
+        
+
+        MDScreen:
+            MDBoxLayout:
+                    
+                orientation:'vertical'
+                size_hint:None,None
+                width:100
+                height:100
+                spacing :25
+                pos_hint:{'center_x':0.5,'center_y':0.5}
+                padding:[30,30,30,30]
+                
+                MDBoxLayout:
+                    size_hint:None,None
+                    pos_hint:{'center_x':0.5,'center_y':0.5}
+                    orientation:'vertical'
+                    size: 400,200
+                    Image:
+                        source:r"logo.png"
+
+               
+                   
+        
+            MDNavigationLayout:
+
+            MDScreenManager:
+
+                MDScreen:
+                    id:label_scr
+
+                    MDTopAppBar:
+                        title: "ITX-SOLUTION"
+                        elevation: 4
+                        pos_hint: {"top": 1}
+                        md_bg_color: "#050b78"
+                        specific_text_color: "#ffffff"
+                        left_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
+
+            MDNavigationDrawer:
+                id: nav_drawer
+                radius: (0, 16, 16, 0)
+                width:'200dp'
+                
+                MDNavigationDrawerMenu:
+                    spacing:10
+
+                    MDNavigationDrawerLabel:
+                        text: "LogOut"
+
+                    MDNavigationDrawerDivider:
+
+                    MDIconButton:
+                        icon: "logout"
+                        width:'50sp'
+                        on_release:root.logOut()
+
+                    
+
+                    MDNavigationDrawerLabel:
+                        text: "Options"
+                        
+
+                    MDNavigationDrawerDivider:
+
+                    
+                        
+                        
+                    MDFlatButton:
+                        
+                        text: "Status"
+                        md_bg_color : (0, 0, 1, 1)
+                        size_hint:0.5,None
+                        theme_text_color : "Custom"
+                        text_color:1,1,1,1
+                        on_release:root.status()
+                
+                
+
+                    MDFlatButton:
+                        
+                        text: "Hours"
+                        md_bg_color:0,0,1,1
+                        size_hint:0.5,None
+                        theme_text_color : "Custom"
+                        text_color:1,1,1,1
+                        on_release:root.check_hour()
+                    
+                
+                    MDFlatButton:
+                        
+                        text: "Main"
+                        md_bg_color:0,0,1,1
+                        size_hint:0.5,None
+                        theme_text_color : "Custom"
+                        text_color:1,1,1,1
+                        on_release:root.after_login()
+                
+
+
+
+##################################################### 101 status
+
+<status>:
+    MDBoxLayout:
+
+        MDScreen:
+            MDBoxLayout:
+                    
+                orientation:'vertical'
+                size_hint:None,None
+                spacing :25
+                pos_hint:{'center_x':0.5,'center_y':0.5}
+                padding:[30,30,30,30]
+                
+                MDBoxLayout:
+                    size_hint:None,None
+                    pos_hint:{'center_x':0.5,'center_y':0.5}
+                    orientation:'vertical'
+                    size: 400,200
+                    Image:
+                        source:r"logo.png"
+
+                                  
+        
+            MDNavigationLayout:
+
+            MDScreenManager:
+
+                MDScreen:
+
+                    MDTopAppBar:
+                        title: "Status"
+                        elevation: 4
+                        pos_hint: {"top": 1}
+                        md_bg_color: "#050b78"
+                        specific_text_color: "#ffffff"
+                        left_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
+
+
+                    
+                        
+
+                    MDFlatButton:
+                            
+                        text: "Check In"
+                        md_bg_color : (0, 0, 1, 1)
+                        size_hint:0.5,None
+                        theme_text_color : "Custom"
+                        text_color:1,1,1,1
+                        pos_hint:{'center_x':0.5,'center_y':0.45}
+                        on_release:root.checkIn()
+                    
+                
+                    MDFlatButton:
+                        
+                        text: "Check Out"
+                        md_bg_color : (0, 0, 1, 1)
+                        size_hint:0.5,None
+                        theme_text_color : "Custom"
+                        pos_hint:{'center_x':0.5,'center_y':0.35}
+                        text_color:1,1,1,1
+                        on_release:root.checkOut()
+                           
+
+
+            MDNavigationDrawer:
+                id: nav_drawer
+                radius: (0, 16, 16, 0)
+                width:'200dp'
+                
+                MDNavigationDrawerMenu:
+                    spacing:10
+
+                    MDNavigationDrawerLabel:
+                        text: "LogOut"
+
+                    MDNavigationDrawerDivider:
+
+                    MDIconButton:
+                        icon: "logout"
+                        width:'50sp'
+                        on_release:root.logOut()
+
+                    
+
+                    MDNavigationDrawerLabel:
+                        text: "Options"
+                        
+
+                    MDNavigationDrawerDivider:
+
+                    
+                        
+                        
+                    MDFlatButton:
+                        
+                        text: "Status"
+                        md_bg_color : (0, 0, 1, 1)
+                        size_hint:0.5,None
+                        theme_text_color : "Custom"
+                        text_color:1,1,1,1
+                        on_release:root.status()
+                
+                
+
+                    MDFlatButton:
+                        
+                        text: "Hours"
+                        md_bg_color:0,0,1,1
+                        size_hint:0.5,None
+                        theme_text_color : "Custom"
+                        text_color:1,1,1,1
+                        on_release:root.check_hour()
+                    
+                
+                    MDFlatButton:
+                        
+                        text: "Main"
+                        md_bg_color:0,0,1,1
+                        size_hint:0.5,None
+                        theme_text_color : "Custom"
+                        text_color:1,1,1,1
+                        on_release:root.after_login()
+
+
+#############################################  101  check hour
+
+<check_hour>:
+    MDBoxLayout:
+        
+        
+
+        MDScreen:
+                   
+        
+            MDNavigationLayout:
+
+            MDScreenManager:
+
+                MDScreen:
+                    id:table_box
+
+                    MDTopAppBar:
+                        title: "Hours"
+                        elevation: 4
+                        pos_hint: {"top": 1}
+                        md_bg_color: "#050b78"
+                        specific_text_color: "#ffffff"
+                        left_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
+
+                    
+               
+            MDNavigationDrawer:
+                id: nav_drawer
+                radius: (0, 16, 16, 0)
+                width:'200dp'
+                
+                MDNavigationDrawerMenu:
+                    spacing:10
+
+                    MDNavigationDrawerLabel:
+                        text: "LogOut"
+
+                    MDNavigationDrawerDivider:
+
+                    MDIconButton:
+                        icon: "logout"
+                        width:'50sp'
+                        on_release:root.logOut()
+
+                    
+
+                    MDNavigationDrawerLabel:
+                        text: "Options"
+                        
+
+                    MDNavigationDrawerDivider:
+
+                    
+                        
+                        
+                    MDFlatButton:
+                        
+                        text: "Status"
+                        md_bg_color : (0, 0, 1, 1)
+                        size_hint:0.5,None
+                        theme_text_color : "Custom"
+                        text_color:1,1,1,1
+                        on_release:root.status()
+                
+                
+
+                    MDFlatButton:
+                        
+                        text: "Hours"
+                        md_bg_color:0,0,1,1
+                        size_hint:0.5,None
+                        theme_text_color : "Custom"
+                        text_color:1,1,1,1
+                        on_release:root.check_hour()
+                    
+                
+                    MDFlatButton:
+                        
+                        text: "Main"
+                        md_bg_color:0,0,1,1
+                        size_hint:0.5,None
+                        theme_text_color : "Custom"
+                        text_color:1,1,1,1
+                        on_release:root.after_login()
+
+
+
+#############################################  101  main admin
+
+
+
+
+<Main_admin>:
+    MDBoxLayout:
+        
+        
+
+        MDScreen:
+            MDBoxLayout:
+                orientation:'vertical'
+                size_hint:1,1
+                spacing :25
+                pos_hint:{'center_x':0.5,'center_y':0.65}
+                padding:[30,30,30,30]
+
+
+                MDBoxLayout:
+                    size_hint:0.75,0.5
+                    pos_hint:{'center_x':0.5,'center_y':0.8}
+                    orientation:'vertical'
+                    
+                    Image:
+                        source:r"logo.png"   
+        
+            MDNavigationLayout:
+
+            MDScreenManager:
+
+                MDScreen:
+                    id:main_admin_scr
+
+                    MDTopAppBar:
+                        title: "Main Menu"
+                        elevation: 4
+                        pos_hint: {"top": 1}
+                        md_bg_color: "#050b78"
+                        specific_text_color: "#ffffff"
+                        left_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
+
+                    
+               
+            MDNavigationDrawer:
+                id: nav_drawer
+                radius: (0, 16, 16, 0)
+                width:'200dp'
+                
+                
+                MDNavigationDrawerMenu:
+                    spacing:10    
+
+                    MDNavigationDrawerLabel:
+                        text: "LogOut"
+
+                    MDNavigationDrawerDivider:
+
+                    MDIconButton:
+                        icon: "logout"
+                        width:'50sp'
+                        on_release:root.logOut()
+
+                    
+
+                    MDNavigationDrawerLabel:
+                        text: "Options"
+
+                    MDNavigationDrawerDivider:
+
+                    MDFlatButton:
+                        
+                        text: "User Manage"
+                        md_bg_color : (0, 0, 1, 1)
+                        size_hint:0.5,None
+                        theme_text_color : "Custom"
+                        text_color:1,1,1,1
+                        on_release:root.user_manage()
+                        
+                    MDFlatButton:
+                        
+                        text: "Time Manage"
+                        md_bg_color:0,0,1,1
+                        size_hint:0.5,None
+                        theme_text_color : "Custom"
+                        text_color:1,1,1,1
+                        on_release:root.time_manage()
+
+                    MDFlatButton:
+                        
+                        text:"Company Manage"
+                        md_bg_color:0,0,1,1
+                        size_hint:0.5,None
+                        theme_text_color : "Custom"
+                        text_color:1,1,1,1
+                        on_release:root.company_manage()
+
+
+
+################################################ 101 user_manage
+
+
+<user_manage>:
+    MDBoxLayout:
+        
+        
+
+        MDScreen:
+            MDBoxLayout:
+                orientation:'vertical'
+                size_hint:None,None
+                spacing :25
+                pos_hint:{'center_x':0.5,'center_y':0.5}
+                padding:[30,30,30,30]
+
+
+                MDBoxLayout:
+                    size_hint:None,None
+                    pos_hint:{'center_x':0.5,'center_y':0.5}
+                    orientation:'vertical'
+                    size: 400,200
+                    Image:
+                        source:r"logo.png"   
+        
+            MDNavigationLayout:
+
+            MDScreenManager:
+
+                MDScreen:
+                    id:main_admin_scr
+
+                    MDTopAppBar:
+                        title: "User Manage"
+                        elevation: 4
+                        pos_hint: {"top": 1}
+                        md_bg_color: "#050b78"
+                        specific_text_color: "#ffffff"
+                        left_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
+
+                    
+               
+            MDNavigationDrawer:
+                id: nav_drawer
+                radius: (0, 16, 16, 0)
+                width:'200dp'
+                
+                
+                MDNavigationDrawerMenu:
+                    spacing:10    
+
+                    MDNavigationDrawerLabel:
+                        text: "LogOut"
+
+                    MDNavigationDrawerDivider:
+
+                    MDIconButton:
+                        icon: "logout"
+                        width:'50sp'
+                        on_release:root.logOut()
+
+                    
+
+                    MDNavigationDrawerLabel:
+                        text: "Options"
+
+                    MDNavigationDrawerDivider:
+
+                    MDFlatButton:
+                        
+                        text: "All Users"
+                        md_bg_color : (0, 0, 1, 1)
+                        size_hint:0.5,None
+                        theme_text_color : "Custom"
+                        text_color:1,1,1,1
+                        on_release:root.Users()
+                        
+                    MDFlatButton:
+                        
+                        text: "Add Users"
+                        md_bg_color:0,0,1,1
+                        size_hint:0.5,None
+                        theme_text_color : "Custom"
+                        text_color:1,1,1,1
+                        on_release:root.AddNew()
+
+                    MDFlatButton:
+                        
+                        text:"Remove Users"
+                        md_bg_color:0,0,1,1
+                        size_hint:0.5,None
+                        theme_text_color : "Custom"
+                        text_color:1,1,1,1
+                        on_release:root.Remove()
+
+                    MDFlatButton:
+                        
+                        text:"Update User"
+                        md_bg_color:0,0,1,1
+                        size_hint:0.5,None
+                        theme_text_color : "Custom"
+                        text_color:1,1,1,1
+                        on_release:root.update_users(self)
+
+                    MDFlatButton:
+                        
+                        text:"Main Menu"
+                        md_bg_color:0,0,1,1
+                        size_hint:0.5,None
+                        theme_text_color : "Custom"
+                        text_color:1,1,1,1
+                        on_release:root.Main()
+
+########################################################## 101 update_users
+
+<update_users>:
+    MDBoxLayout:
+        
+        
+
+        MDScreen:
+            MDBoxLayout:
+                orientation:'vertical'
+                size_hint:None,None
+                spacing :25
+                pos_hint:{'center_x':0.5,'center_y':0.5}
+                padding:[30,30,30,30]
+
+
+                MDBoxLayout:
+                    size_hint:None,None
+                    pos_hint:{'center_x':0.5,'center_y':0.5}
+                    orientation:'vertical'
+                    size: 400,200
+                    Image:
+                        source:r"logo.png"
+        
+            MDNavigationLayout:
+
+            MDScreenManager:
+
+                MDScreen:
+                    id:update_users
+
+                    MDTopAppBar:
+                        title: "Add NFC"
+                        elevation: 4
+                        pos_hint: {"top": 1}
+                        md_bg_color: "#050b78"
+                        specific_text_color: "#ffffff"
+                        left_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
+
+                    
+               
+            MDNavigationDrawer:
+                id: nav_drawer
+                radius: (0, 16, 16, 0)
+                width:'200dp'
+                
+                
+                MDNavigationDrawerMenu:
+                    spacing:10    
+
+                    MDNavigationDrawerLabel:
+                        text: "LogOut"
+
+                    MDNavigationDrawerDivider:
+
+                    MDIconButton:
+                        icon: "logout"
+                        width:'50sp'
+                        on_release:root.logOut()
+
+
+                    MDNavigationDrawerDivider:
+
+                    MDNavigationDrawerLabel:
+                        text: "Back"
+
+                    MDIconButton:
+                        icon: "arrow-left"
+                        width:'50sp'
+                        on_release:root.user_manage()
+
+########################################################## 101 company_manage
+
+
+<company_manage>:
+    MDBoxLayout:
+        
+        
+
+        MDScreen:
+            MDBoxLayout:
+                orientation:'vertical'
+                size_hint:None,None
+                spacing :25
+                pos_hint:{'center_x':0.5,'center_y':0.5}
+                padding:[30,30,30,30]
+
+
+                MDBoxLayout:
+                    size_hint:None,None
+                    pos_hint:{'center_x':0.5,'center_y':0.5}
+                    orientation:'vertical'
+                    size: 400,200
+                    Image:
+                        source:r"logo.png"   
+        
+            MDNavigationLayout:
+
+            MDScreenManager:
+
+                MDScreen:
+                    id:main_admin_scr
+
+                    MDTopAppBar:
+                        title: "Company Manage"
+                        elevation: 4
+                        pos_hint: {"top": 1}
+                        md_bg_color: "#050b78"
+                        specific_text_color: "#ffffff"
+                        left_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
+
+                    
+               
+            MDNavigationDrawer:
+                id: nav_drawer
+                radius: (0, 16, 16, 0)
+                width:'200dp'
+                
+                
+                MDNavigationDrawerMenu:
+                    spacing:10    
+
+                    MDNavigationDrawerLabel:
+                        text: "LogOut"
+
+                    MDNavigationDrawerDivider:
+
+                    MDIconButton:
+                        icon: "logout"
+                        width:'50sp'
+                        on_release:root.logOut()
+
+                    
+
+                    MDNavigationDrawerLabel:
+                        text: "Options"
+
+                    MDNavigationDrawerDivider:
+
+                    MDFlatButton:
+                        
+                        text: "Balance Sheet"
+                        md_bg_color : (0, 0, 1, 1)
+                        size_hint:0.5,None
+                        theme_text_color : "Custom"
+                        text_color:1,1,1,1
+                        on_release:root.Balance_sheet()
+                        
+                    
+
+                    MDFlatButton:
+                        
+                        text:"Main Menu"
+                        md_bg_color:0,0,1,1
+                        size_hint:0.5,None
+                        theme_text_color : "Custom"
+                        text_color:1,1,1,1
+                        on_release:root.Main()
+
+
+
+
+
+################################################### 101 time manage 
+
+<time_manage>:
+    MDBoxLayout:
+        
+        
+
+        MDScreen:
+            MDBoxLayout:
+                orientation:'vertical'
+                size_hint:None,None
+                spacing :25
+                pos_hint:{'center_x':0.5,'center_y':0.5}
+                padding:[30,30,30,30]
+
+
+                MDBoxLayout:
+                    size_hint:None,None
+                    pos_hint:{'center_x':0.5,'center_y':0.5}
+                    orientation:'vertical'
+                    size: 400,200
+                    Image:
+                        source:r"logo.png"   
+        
+            MDNavigationLayout:
+
+            MDScreenManager:
+
+                MDScreen:
+                    id:main_admin_scr
+
+                    MDTopAppBar:
+                        title: "Time Manage"
+                        elevation: 4
+                        pos_hint: {"top": 1}
+                        md_bg_color: "#050b78"
+                        specific_text_color: "#ffffff"
+                        left_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
+
+                    
+               
+            MDNavigationDrawer:
+                id: nav_drawer
+                radius: (0, 16, 16, 0)
+                width:'200dp'
+                
+                
+                MDNavigationDrawerMenu:
+                    spacing:10    
+
+                    MDNavigationDrawerLabel:
+                        text: "LogOut"
+
+                    MDNavigationDrawerDivider:
+
+                    MDIconButton:
+                        icon: "logout"
+                        width:'50sp'
+                        on_release:root.logOut()
+
+                    
+
+                    MDNavigationDrawerLabel:
+                        text: "Options"
+
+                    MDNavigationDrawerDivider:
+
+                    MDFlatButton:
+                        
+                        text: "Monthly Hour"
+                        md_bg_color : (0, 0, 1, 1)
+                        size_hint:0.5,None
+                        theme_text_color : "Custom"
+                        text_color:1,1,1,1
+                        on_release:root.Mon_hr()
+                        
+                    
+
+                    MDFlatButton:
+                        
+                        text:"Main Menu"
+                        md_bg_color:0,0,1,1
+                        size_hint:0.5,None
+                        theme_text_color : "Custom"
+                        text_color:1,1,1,1
+                        on_release:root.Main()
+
+
+
+
+
+
+
+###############################################  101  Addnew
+
+<Add_New>:
+    MDBoxLayout:
+        
+        
+
+        MDScreen:
+           
+            MDBoxLayout:
+                size_hint:None,None
+                pos_hint:{'center_x':0.5,'center_y':0.8}
+                orientation:'vertical'
+                size: 200,100
+                Image:
+                    source:r"logo.png"   
+        
+            MDNavigationLayout:
+
+            MDScreenManager:
+
+                MDScreen:
+                    id:add_new_scr
+
+                    MDTopAppBar:
+                        title: "Add New"
+                        elevation: 4
+                        pos_hint: {"top": 1}
+                        md_bg_color: "#050b78"
+                        specific_text_color: "#ffffff"
+                        left_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
+
+                    
+               
+            MDNavigationDrawer:
+                id: nav_drawer
+                radius: (0, 16, 16, 0)
+                width:'200dp'
+                
+                MDNavigationDrawerMenu:
+                    spacing:10    
+
+                    MDNavigationDrawerLabel:
+                        text: "LogOut"
+
+                    MDNavigationDrawerDivider:
+
+                    MDIconButton:
+                        icon: "logout"
+                        width:'50sp'
+                        on_release:root.logOut()
+
+                    
+
+                    
+
+                    MDNavigationDrawerDivider:
+
+                    MDNavigationDrawerLabel:
+                        text: "Back"
+
+                    MDIconButton:
+                        icon: "arrow-left"
+                        width:'50sp'
+                        on_release:root.user_manage()
+                    
+
+                    
+
+                
+##################################################### 101 remove
+
+
+
+<Remove_scr>:
+    MDBoxLayout:
+        
+        
+
+        MDScreen:
+            MDBoxLayout:
+                orientation:'vertical'
+                size_hint:None,None
+                spacing :25
+                pos_hint:{'center_x':0.5,'center_y':0.5}
+                padding:[30,30,30,30]
+                MDBoxLayout:
+                    size_hint:None,None
+                    pos_hint:{'center_x':0.5,'center_y':0.6}
+                    orientation:'vertical'
+                    size: 300,150
+                    Image:
+                        source:r"logo.png"   
+        
+            MDNavigationLayout:
+
+            MDScreenManager:
+
+                MDScreen:
+                    id:remove_scr
+
+                    MDTopAppBar:
+                        title: "Remove"
+                        elevation: 4
+                        pos_hint: {"top": 1}
+                        md_bg_color: "#050b78"
+                        specific_text_color: "#ffffff"
+                        left_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
+
+                    
+               
+            MDNavigationDrawer:
+                id: nav_drawer
+                radius: (0, 16, 16, 0)
+                width:'200dp'
+                
+                MDNavigationDrawerMenu:
+                    spacing:10    
+
+                    MDNavigationDrawerLabel:
+                        text: "LogOut"
+
+                    MDNavigationDrawerDivider:
+
+                    MDIconButton:
+                        icon: "logout"
+                        width:'50sp'
+                        on_release:root.logOut()
+
+                    MDNavigationDrawerDivider:
+                    MDNavigationDrawerLabel:
+                        text: "Back"
+
+                    MDIconButton:
+                        icon: "arrow-left"
+                        width:'50sp'
+                        on_release:root.user_manage()
+
+                    
+
+                    
+
+
+
+
+################################################ 101 month_hr
+
+
+
+
+
+<Month_scr>:
+    MDBoxLayout:
+        
+        
+
+        MDScreen:
+            MDBoxLayout:
+                orientation:'vertical'
+                size_hint:None,None
+                spacing :25
+                pos_hint:{'center_x':0.5,'center_y':0.5}
+                padding:[30,30,30,30]
+                MDBoxLayout:
+                    size_hint:None,None
+                    pos_hint:{'center_x':0.5,'center_y':0.5}
+                    orientation:'vertical'
+                    size: 400,200
+                    Image:
+                        source:r"logo.png"   
+        
+            MDNavigationLayout:
+
+            MDScreenManager:
+
+                MDScreen:
+                    id:month_scr
+
+                    MDTopAppBar:
+                        title: "Monthly Hours"
+                        elevation: 4
+                        pos_hint: {"top": 1}
+                        md_bg_color: "#050b78"
+                        specific_text_color: "#ffffff"
+                        left_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
+
+                    
+               
+            MDNavigationDrawer:
+                id: nav_drawer
+                radius: (0, 16, 16, 0)
+                width:'200dp'
+                
+                MDNavigationDrawerMenu:
+                    spacing:10    
+
+                    MDNavigationDrawerLabel:
+                        text: "LogOut"
+
+                    MDNavigationDrawerDivider:
+
+                    MDIconButton:
+                        icon: "logout"
+                        width:'50sp'
+                        on_release:root.logOut()
+
+                    
+
+                    MDNavigationDrawerDivider:
+                    MDNavigationDrawerLabel:
+                        text: "Back"
+
+                    MDIconButton:
+                        icon: "arrow-left"
+                        width:'50sp'
+                        on_release:root.time_manage()
+
+
+
+
+############################################### 101 balance sheet
+
+
+<Balance_sheet>
+    MDBoxLayout:
+        
+        
+
+        MDScreen:
+            MDBoxLayout:
+                orientation:'vertical'
+                size_hint:None,None
+                spacing :25
+                pos_hint:{'center_x':0.5,'center_y':0.5}
+                padding:[30,30,30,30]
+                MDBoxLayout:
+                    size_hint:None,None
+                    pos_hint:{'center_x':0.5,'center_y':0.5}
+                    orientation:'vertical'
+                    size: 400,200
+                    Image:
+                        source:r"logo.png"   
+        
+            MDNavigationLayout:
+
+            MDScreenManager:
+
+                MDScreen:
+                    id:balance_scr
+
+                    MDTopAppBar:
+                        title: "Balance Sheet"
+                        elevation: 4
+                        pos_hint: {"top": 1}
+                        md_bg_color: "#050b78"
+                        specific_text_color: "#ffffff"
+                        left_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
+
+                    
+               
+            MDNavigationDrawer:
+                id: nav_drawer
+                radius: (0, 16, 16, 0)
+                width:'200dp'
+                
+                MDNavigationDrawerMenu:
+                    spacing:10    
+
+                    MDNavigationDrawerLabel:
+                        text: "LogOut"
+
+                    MDNavigationDrawerDivider:
+
+                    MDIconButton:
+                        icon: "logout"
+                        width:'50sp'
+                        on_release:root.logOut()
+
+                    
+
+                    MDNavigationDrawerDivider:
+                    MDNavigationDrawerLabel:
+                        text: "Back"
+                    MDIconButton:
+                        icon: "arrow-left"
+                        width:'50sp'
+                        on_release:root.company_manage()
+
+
+
+############################################### 101 users
+
+
+
+<Users>:
+    MDBoxLayout:
+        
+        
+
+        MDScreen:
+            MDBoxLayout:
+                orientation:'vertical'
+                size_hint:None,None
+                spacing :25
+                pos_hint:{'center_x':0.5,'center_y':0.5}
+                padding:[30,30,30,30]
+                MDBoxLayout:
+                    size_hint:None,None
+                    pos_hint:{'center_x':0.5,'center_y':0.5}
+                    orientation:'vertical'
+                    size: 400,200
+                    Image:
+                        source:r"logo.png"  
+        
+            MDNavigationLayout:
+
+            MDScreenManager:
+
+                MDScreen:
+                    id:users_scr
+
+                    MDTopAppBar:
+                        title: "Users"
+                        elevation: 4
+                        pos_hint: {"top": 1}
+                        md_bg_color: "#050b78"
+                        specific_text_color: "#ffffff"
+                        left_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
+
+                    
+               
+            MDNavigationDrawer:
+                id: nav_drawer
+                radius: (0, 16, 16, 0)
+                width:'200dp'
+                
+                MDNavigationDrawerMenu:
+                    spacing:10    
+
+                    MDNavigationDrawerLabel:
+                        text: "LogOut"
+
+                    MDNavigationDrawerDivider:
+
+                    MDIconButton:
+                        icon: "logout"
+                        width:'50sp'
+                        on_release:root.logOut()
+
+                    
+
+                    MDNavigationDrawerDivider:
+                    MDNavigationDrawerLabel:
+                        text: "Back"
+                    MDIconButton:
+                        icon: "arrow-left"
+                        width:'50sp'
+                        on_release:root.user_manage()
+                                        
+
+                    
+####################################################### 101 user click
+
+<user_click>:
+    MDBoxLayout:
+        
+        
+
+        MDScreen:
+            MDBoxLayout:
+                orientation:'vertical'
+                size_hint:None,None
+                spacing :25
+                pos_hint:{'center_x':0.5,'center_y':0.5}
+                padding:[30,30,30,30]
+                MDBoxLayout:
+                    size_hint:None,None
+                    pos_hint:{'center_x':0.5,'center_y':0.5}
+                    orientation:'vertical'
+                    size: 400,200
+                    Image:
+                        source:r"logo.png"   
+        
+            MDNavigationLayout:
+
+            MDScreenManager:
+
+                MDScreen:
+                    id:detail_scr
+
+                    MDTopAppBar:
+                        title: "Detail"
+                        elevation: 4
+                        pos_hint: {"top": 1}
+                        md_bg_color: "#050b78"
+                        specific_text_color: "#ffffff"
+                        left_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
+
+                    
+               
+            MDNavigationDrawer:
+                id: nav_drawer
+                radius: (0, 16, 16, 0)
+                width:'200dp'
+                
+                MDNavigationDrawerMenu:
+                    spacing:10    
+
+                    MDNavigationDrawerLabel:
+                        text: "LogOut"
+
+                    MDNavigationDrawerDivider:
+
+                    MDIconButton:
+                        icon: "logout"
+                        width:'50sp'
+                        on_release:root.logOut()
+
+                    
+
+                    MDNavigationDrawerDivider:
+                    MDNavigationDrawerLabel:
+                        text: "Back"
+                    MDIconButton:
+                        icon: "arrow-left"
+                        width:'50sp'
+                        on_release:root.time_manage()
