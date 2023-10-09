@@ -2875,7 +2875,7 @@ class user_click(extra,Screen):
 class LoginApp(MDApp):
 
     def build(self):
-        Window.size = (360, 640)
+        #Window.size = (360, 640)
         
             
         self.screenManager = ScreenManager(transition=NoTransition())
